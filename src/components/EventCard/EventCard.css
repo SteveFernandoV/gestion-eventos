@@ -1,50 +1,64 @@
-.event-card{
-    width:320px;
-    background:white;
-    color:#222;
-    border-radius:10px;
-    padding:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+.event-card {
+  width: 330px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,.15);
+  transition: .3s;
 }
 
-.event-card h2{
-    margin-bottom:15px;
-    color:#1f2937;
-    font-size:24px;
+.event-card:hover{
+  transform: translateY(-6px);
+}
+
+.event-header{
+  background:#2563eb;
+  color:white;
+  padding:15px;
+}
+
+.event-header h2{
+  margin:0;
+  font-size:22px;
+}
+
+.event-info{
+  padding:20px;
+}
+
+.event-info p{
+  color:#444;
+  line-height:1.6;
 }
 
 .buttons{
-    display:flex;
-    justify-content:space-between;
-    margin-top:20px;
+  display:flex;
+  justify-content:space-around;
+  padding:20px;
+}
+
+.edit,
+.delete{
+  border:none;
+  padding:10px 18px;
+  border-radius:6px;
+  cursor:pointer;
+  color:white;
+  transition:.3s;
 }
 
 .edit{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-.delete{
-    background:#dc2626;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    border-radius:5px;
-    cursor:pointer;
+  background:#2563eb;
 }
 
 .edit:hover{
-    background:#1d4ed8;
+  background:#1d4ed8;
+}
+
+.delete{
+  background:#dc2626;
 }
 
 .delete:hover{
-    background:#b91c1c;
-}
-.event-card p{
-    color:#444;
-    line-height:1.6;
+  background:#b91c1c;
 }

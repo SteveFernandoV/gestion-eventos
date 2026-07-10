@@ -1,32 +1,42 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="logo">
-        Gestión de Eventos
+      <div className="navbar-logo">
+        <Link to="/">Gestión de Eventos</Link>
       </div>
 
-      <ul className="nav-links">
+      <ul className="navbar-menu">
         <li>
-        <Link to="/new-event">Nuevo Evento</Link>
-        </li>
-        
-        <li>
-          <Link to="/">Inicio</Link>
+          <NavLink to="/" end>
+            Inicio
+          </NavLink>
         </li>
 
         <li>
-          <Link to="/events">Eventos</Link>
+          <NavLink to="/events">
+            Eventos
+          </NavLink>
         </li>
 
         <li>
-          <Link to="/participants">Participantes</Link>
+          <NavLink to="/new-event">
+            Nuevo Evento
+          </NavLink>
         </li>
 
         <li>
-          <Link to="/dashboard">Dashboard</Link>
+          <NavLink to="/participants">
+            Participantes
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/dashboard">
+            Dashboard
+          </NavLink>
         </li>
       </ul>
     </nav>

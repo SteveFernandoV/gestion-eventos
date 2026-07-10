@@ -6,25 +6,33 @@ function EventCard({ event }) {
   const navigate = useNavigate();
   const { deleteEvent } = useEvents();
 
-  const handleDelete = () => {
-    if (window.confirm(`¿Eliminar "${event.title}"?`)) {
-      deleteEvent(event.id);
-    }
-  };
-
   const handleEdit = () => {
     navigate(`/edit-event/${event.id}`);
   };
 
+  const handleDelete = () => {
+    if (window.confirm(`¿Desea eliminar el evento "${event.title}"?`)) {
+      deleteEvent(event.id);
+    }
+  };
+
   return (
     <div className="event-card">
-      <h2>{event.title}</h2>
+      <div className="event-header">
+        <h2>{event.title}</h2>
+      </div>
 
-      <p><strong>Fecha:</strong> {event.date}</p>
+      <div className="event-info">
+        <p>
+          <strong>📅 Fecha:</strong> {event.date}
+        </p>
 
-      <p><strong>Lugar:</strong> {event.location}</p>
+        <p>
+          <strong>📍 Lugar:</strong> {event.location}
+        </p>
 
-      <p>{event.description}</p>
+        <p>{event.description}</p>
+      </div>
 
       <div className="buttons">
         <button className="edit" onClick={handleEdit}>
