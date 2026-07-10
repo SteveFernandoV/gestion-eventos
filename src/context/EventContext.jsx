@@ -28,13 +28,15 @@ export const EventProvider = ({ children }) => {
   ]);
 
   const addEvent = (event) => {
-    setEvents([
-      ...events,
-      {
-        ...event,
-        id: Date.now(),
-      },
-    ]);
+    setEvents([...events, { ...event, id: Date.now() }]);
+  };
+
+  const updateEvent = (updatedEvent) => {
+    setEvents(
+      events.map((event) =>
+        event.id === updatedEvent.id ? updatedEvent : event
+      )
+    );
   };
 
   const deleteEvent = (id) => {
@@ -46,6 +48,7 @@ export const EventProvider = ({ children }) => {
       value={{
         events,
         addEvent,
+        updateEvent,
         deleteEvent,
       }}
     >

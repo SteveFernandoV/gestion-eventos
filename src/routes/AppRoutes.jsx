@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import Events from "../pages/Events";
 import Participants from "../pages/Participants";
+import NewEvent from "../pages/NewEvent";
 import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
@@ -13,6 +14,7 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/new-event" element={<NewEvent />} />
         <Route path="/participants" element={<Participants />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

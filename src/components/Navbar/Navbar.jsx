@@ -10,6 +10,10 @@ function Navbar() {
 
       <ul className="nav-links">
         <li>
+        <Link to="/new-event">Nuevo Evento</Link>
+        </li>
+        
+        <li>
           <Link to="/">Inicio</Link>
         </li>
 
