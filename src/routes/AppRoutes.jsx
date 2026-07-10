@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import Events from "../pages/Events";
 import Participants from "../pages/Participants";
 import NewEvent from "../pages/NewEvent";
+import EditEvent from "../pages/EditEvent";
 import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
@@ -15,6 +16,7 @@ function AppRoutes() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/events" element={<Events />} />
         <Route path="/new-event" element={<NewEvent />} />
+        <Route path="/edit-event/:id" element={<EditEvent />} />
         <Route path="/participants" element={<Participants />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

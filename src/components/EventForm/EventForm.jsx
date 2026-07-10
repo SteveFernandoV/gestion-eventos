@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useEvents from "../../hooks/useEvents";
 import "./EventForm.css";
 
-function EventForm() {
-  const { addEvent } = useEvents();
+function EventForm({ eventToEdit }) {
+  const { addEvent, updateEvent } = useEvents();
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -13,6 +13,12 @@ function EventForm() {
     location: "",
     description: "",
   });
+
+  useEffect(() => {
+    if (eventToEdit) {
+      setForm(eventToEdit);
+    }
+  }, [eventToEdit]);
 
   const handleChange = (e) => {
     setForm({
@@ -24,23 +30,20 @@ function EventForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    addEvent(form);
-
-    setForm({
-      title: "",
-      date: "",
-      location: "",
-      description: "",
-    });
-
-    alert("Evento registrado correctamente.");
+    if (eventToEdit) {
+      updateEvent(form);
+      alert("Evento actualizado correctamente.");
+    } else {
+      addEvent(form);
+      alert("Evento registrado correctamente.");
+    }
 
     navigate("/events");
   };
 
   return (
     <form className="event-form" onSubmit={handleSubmit}>
-      <h2>Registrar Evento</h2>
+      <h2>{eventToEdit ? "Editar Evento" : "Registrar Evento"}</h2>
 
       <input
         type="text"
@@ -76,7 +79,9 @@ function EventForm() {
         required
       />
 
-      <button type="submit">Guardar Evento</button>
+      <button type="submit">
+        {eventToEdit ? "Actualizar Evento" : "Guardar Evento"}
+      </button>
     </form>
   );
 }
