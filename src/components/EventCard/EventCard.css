@@ -1,0 +1,50 @@
+.event-card{
+    width:320px;
+    background:white;
+    color:#222;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.event-card h2{
+    margin-bottom:15px;
+    color:#1f2937;
+    font-size:24px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+}
+
+.edit{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.delete{
+    background:#dc2626;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.edit:hover{
+    background:#1d4ed8;
+}
+
+.delete:hover{
+    background:#b91c1c;
+}
+.event-card p{
+    color:#444;
+    line-height:1.6;
+}
