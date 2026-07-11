@@ -1,16 +1,187 @@
-# React + Vite
+# Sistema Web de Gestión de Eventos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Producto Académico Final
 
-Currently, two official plugins are available:
+**Universidad Continental**  
+Carrera Profesional de Ingeniería de Sistemas e Informática
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Autor
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Steve Fernando Salas Velarde**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Descripción
+
+El Sistema Web de Gestión de Eventos es una aplicación web desarrollada con React que permite administrar eventos y participantes mediante una interfaz moderna e intuitiva.
+
+El sistema permite registrar, editar, eliminar y consultar eventos, así como registrar participantes e inscribirlos en los eventos disponibles. Para el almacenamiento de la información se emplea JSON Server como API REST simulada y Axios para el consumo de datos.
+
+---
+
+# Objetivo
+
+Desarrollar una aplicación web que facilite la gestión de eventos y participantes mediante el uso de React, React Router, Context API, Axios y JSON Server, aplicando buenas prácticas de desarrollo Frontend.
+
+---
+
+# Funcionalidades
+
+## Gestión de Eventos
+
+- Registrar eventos.
+- Visualizar eventos.
+- Buscar eventos.
+- Editar eventos.
+- Eliminar eventos.
+
+## Gestión de Participantes
+
+- Registrar participantes.
+- Visualizar participantes.
+- Eliminar participantes.
+
+## Gestión de Inscripciones
+
+- Inscribir participantes en eventos.
+- Consultar participantes inscritos.
+- Eliminar inscripciones.
+
+## Dashboard
+
+- Visualizar información general del sistema.
+
+---
+
+# Tecnologías Utilizadas
+
+- React
+- React Router DOM
+- Axios
+- Bootstrap 5
+- JSON Server
+- Context API
+- Hooks Personalizados
+- Vitest
+- React Testing Library
+- Git
+- GitHub
+- Visual Studio Code
+
+---
+
+# Arquitectura del Proyecto
+
+```text
+gestion-eventos/
+
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── context/
+│   ├── hooks/
+│   ├── pages/
+│   ├── routes/
+│   ├── services/
+│   ├── tests/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── db.json
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+# Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/SteveFernandoV/gestion-eventos.git
+```
+
+Ingresar a la carpeta del proyecto:
+
+```bash
+cd gestion-eventos
+```
+
+Instalar las dependencias:
+
+```bash
+npm install
+```
+
+---
+
+# Ejecución del Proyecto
+
+Iniciar JSON Server:
+
+```bash
+npm run server
+```
+
+Iniciar la aplicación React:
+
+```bash
+npm run dev
+```
+
+Abrir el navegador en:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# Ejecución de Pruebas
+
+Ejecutar las pruebas unitarias:
+
+```bash
+npm test
+```
+
+---
+
+# Herramientas Utilizadas
+
+- Visual Studio Code
+- GitHub
+- Node.js
+- npm
+- JSON Server
+
+---
+
+# Conclusiones
+
+- Se desarrolló una aplicación web utilizando React y React Router para la navegación.
+- Se implementó un CRUD completo para la gestión de eventos.
+- Se desarrolló un módulo para el registro de participantes e inscripción a eventos.
+- Se utilizó Axios junto con JSON Server para consumir una API REST simulada.
+- Se implementaron pruebas unitarias mediante Vitest y React Testing Library.
+- Se aplicó Context API para la administración del estado global de la aplicación.
+
+---
+
+# Repositorio
+
+Actualizar el siguiente enlace con la URL del repositorio del proyecto una vez publicado en GitHub:
+
+`https://github.com/SteveFernandoV/gestion-eventos`
+
+---
+
+# Licencia
+
+Proyecto desarrollado exclusivamente con fines académicos para el Producto Académico Final del curso de Desarrollo de Aplicaciones Web de la Universidad Continental.
