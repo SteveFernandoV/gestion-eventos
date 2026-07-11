@@ -1,0 +1,43 @@
+.dashboard{
+
+    padding:50px;
+
+    text-align:center;
+
+}
+
+.cards{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin-top:40px;
+
+    flex-wrap:wrap;
+
+}
+
+.card{
+
+    width:250px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.card h2{
+
+    font-size:50px;
+
+    color:#2563eb;
+
+}

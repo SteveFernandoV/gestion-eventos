@@ -1,0 +1,33 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Conferencia de Tecnología",
+      "date": "2026-08-15",
+      "location": "Cusco",
+      "description": "Evento sobre innovación tecnológica."
+    }
+  ],
+  "participants": [
+    {
+      "name": "steve ",
+      "email": "fer10000@live.com",
+      "phone": "916097393",
+      "id": "lN3nVmkQP3Q"
+    },
+    {
+      "name": "fernando ",
+      "email": "elmo@gmail.com",
+      "phone": "901202304",
+      "id": "RAfZ6IqDHNg"
+    }
+  ],
+  "enrollments": [
+    {
+      "participant": "steve ",
+      "event": "Conferencia de Tecnología",
+      "id": "w6eivab73TQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

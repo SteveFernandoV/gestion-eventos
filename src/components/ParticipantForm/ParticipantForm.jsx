@@ -18,10 +18,7 @@ function ParticipantForm({ addParticipant }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    addParticipant({
-      id: Date.now(),
-      ...form,
-    });
+    addParticipant(form);
 
     setForm({
       name: "",

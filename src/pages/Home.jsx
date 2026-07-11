@@ -1,35 +1,49 @@
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
-function Home() {
-  return (
-    <>
-      <Navbar />
+function Home(){
 
-      <main
+    return(
+
+        <>
+
+        <Navbar/>
+
+        <div
         style={{
-          padding: "60px 20px",
-          minHeight: "80vh",
-          textAlign: "center",
+            padding:"70px",
+            textAlign:"center"
         }}
-      >
-        <h1>Sistema de Gestión de Eventos</h1>
+        >
 
-        <p>Bienvenido al sistema de administración de eventos.</p>
+            <h1 className="home-title">
+  Sistema Web de Gestión de Eventos
+</h1>
+            <p>
 
-        <br />
+            Plataforma para administrar eventos,
+            participantes e inscripciones.
 
-        <h2>Funciones del sistema</h2>
+            </p>
 
-        <p>✔ Registrar eventos</p>
-        <p>✔ Administrar participantes</p>
-        <p>✔ Inscribir participantes en eventos</p>
-        <p>✔ Consultar información rápidamente</p>
-      </main>
+            <br/>
 
-      <Footer />
-    </>
-  );
+            <img
+            src="https://picsum.photos/900/300"
+            style={{
+                borderRadius:"12px",
+                width:"80%"
+            }}
+            />
+
+        </div>
+
+        <Footer/>
+
+        </>
+
+    );
+
 }
 
 export default Home;

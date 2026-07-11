@@ -34,15 +34,21 @@ function EventCard({ event }) {
         <p>{event.description}</p>
       </div>
 
-      <div className="buttons">
-        <button className="edit" onClick={handleEdit}>
-          Editar
-        </button>
+     <div className="buttons">
+  <button
+    className="btn btn-primary"
+    onClick={handleEdit}
+  >
+    Editar
+  </button>
 
-        <button className="delete" onClick={handleDelete}>
-          Eliminar
-        </button>
-      </div>
+  <button
+    className="btn btn-danger"
+    onClick={handleDelete}
+  >
+    Eliminar
+  </button>
+</div>
     </div>
   );
 }

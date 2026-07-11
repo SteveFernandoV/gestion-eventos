@@ -16,6 +16,12 @@ function Navbar() {
         </li>
 
         <li>
+  <NavLink to="/enroll-participant">
+    Inscripciones
+  </NavLink>
+</li>
+
+        <li>
           <NavLink to="/events">
             Eventos
           </NavLink>

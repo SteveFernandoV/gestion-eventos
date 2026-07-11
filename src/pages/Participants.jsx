@@ -1,20 +1,14 @@
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import ParticipantForm from "../components/ParticipantForm/ParticipantForm";
-import { useState } from "react";
+import useParticipants from "../hooks/useParticipants";
 
 function Participants() {
-  const [participants, setParticipants] = useState([]);
-
-  const addParticipant = (participant) => {
-    setParticipants([
-      ...participants,
-      {
-        id: Date.now(),
-        ...participant,
-      },
-    ]);
-  };
+  const {
+    participants,
+    addParticipant,
+    deleteParticipant,
+  } = useParticipants();
 
   return (
     <>
@@ -23,9 +17,7 @@ function Participants() {
       <div style={{ padding: "40px" }}>
         <ParticipantForm addParticipant={addParticipant} />
 
-        <h2 style={{ marginTop: "40px" }}>
-          Lista de Participantes
-        </h2>
+        <h2>Lista de Participantes</h2>
 
         {participants.length === 0 ? (
           <p>No hay participantes registrados.</p>
@@ -33,8 +25,8 @@ function Participants() {
           <table
             style={{
               width: "100%",
-              borderCollapse: "collapse",
               marginTop: "20px",
+              borderCollapse: "collapse",
             }}
           >
             <thead>
@@ -42,6 +34,7 @@ function Participants() {
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Teléfono</th>
+                <th>Acciones</th>
               </tr>
             </thead>
 
@@ -51,6 +44,14 @@ function Participants() {
                   <td>{participant.name}</td>
                   <td>{participant.email}</td>
                   <td>{participant.phone}</td>
+                  <td>
+                    <button
+  className="btn btn-danger btn-sm"
+  onClick={() => deleteParticipant(participant.id)}
+>
+  Eliminar
+</button>
+                  </td>
                 </tr>
               ))}
             </tbody>

@@ -1,46 +1,55 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import eventService from "../services/eventService";
 
 export const EventContext = createContext();
 
 export const EventProvider = ({ children }) => {
-  const [events, setEvents] = useState([
-    {
-      id: 1,
-      title: "Conferencia de Tecnología",
-      date: "15/08/2026",
-      location: "Cusco",
-      description: "Evento sobre innovación tecnológica.",
-    },
-    {
-      id: 2,
-      title: "Hackathon Universitario",
-      date: "20/08/2026",
-      location: "Universidad Continental",
-      description: "Competencia de programación.",
-    },
-    {
-      id: 3,
-      title: "Curso de React",
-      date: "28/08/2026",
-      location: "Virtual",
-      description: "Curso intensivo de React.",
-    },
-  ]);
+  const [events, setEvents] = useState([]);
 
-  const addEvent = (event) => {
-    setEvents([...events, { ...event, id: Date.now() }]);
+  useEffect(() => {
+    loadEvents();
+  }, []);
+
+  const loadEvents = async () => {
+    try {
+      const data = await eventService.getAll();
+      setEvents(data);
+    } catch (error) {
+      console.error("Error al cargar eventos:", error);
+    }
   };
 
-  const updateEvent = (updatedEvent) => {
-    setEvents(
-      events.map((event) =>
-        event.id === updatedEvent.id ? updatedEvent : event
-      )
-    );
+  const addEvent = async (event) => {
+    try {
+      const newEvent = await eventService.create(event);
+      setEvents((prev) => [...prev, newEvent]);
+    } catch (error) {
+      console.error("Error al agregar evento:", error);
+    }
   };
 
-  const deleteEvent = (id) => {
-    setEvents(events.filter((event) => event.id !== id));
+  const updateEvent = async (updatedEvent) => {
+    try {
+      const event = await eventService.update(updatedEvent);
+
+      setEvents((prev) =>
+        prev.map((e) => (e.id === event.id ? event : e))
+      );
+    } catch (error) {
+      console.error("Error al actualizar evento:", error);
+    }
+  };
+
+  const deleteEvent = async (id) => {
+    try {
+      await eventService.remove(id);
+
+      setEvents((prev) =>
+        prev.filter((event) => event.id !== id)
+      );
+    } catch (error) {
+      console.error("Error al eliminar evento:", error);
+    }
   };
 
   return (
@@ -50,6 +59,7 @@ export const EventProvider = ({ children }) => {
         addEvent,
         updateEvent,
         deleteEvent,
+        loadEvents,
       }}
     >
       {children}
